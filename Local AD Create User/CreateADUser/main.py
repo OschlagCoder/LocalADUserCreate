@@ -7,7 +7,7 @@ from PIL import Image, ImageTk
 
 root = Tk()
 
-ShellPath = r'C:\Users\lolligschlager\PycharmProjects\CreateADUser\CreateUser.ps1'
+ShellPath = r'venv\Assets\CreateUser.ps1'
 
 # initialize values to pull
 first = StringVar()
@@ -55,7 +55,7 @@ root.configure(
 )
 
 # this will create the widgets
-img = Image.open("Owl_logo.png")
+img = Image.open(r"venv\Assets\Owl_logo.png")
 pimg = ImageTk.PhotoImage(img)
 
 header = Label(image=pimg)
