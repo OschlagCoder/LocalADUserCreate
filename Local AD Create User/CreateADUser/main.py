@@ -1,19 +1,24 @@
 # Python Program to create Active Directory User(s)
-
+import os
 from tkinter import *
 import subprocess
 import sys
 from PIL import Image, ImageTk
 
+#  This is for the exe file
+if getattr(sys, 'frozen', False):
+    os.chdir(sys._MEIPASS)
+
 root = Tk()
 
-ShellPath = r'venv\Assets\CreateUser.ps1'
+
+ShellPath = r'.assets\CreateUser.ps1'
 
 # initialize values to pull
 first = StringVar()
 last = StringVar()
 selection = StringVar(root)
-selection.set("Select Location") # Default Value
+selection.set("Select Location")  # Default Value
 
 backgroundcolor = "#395B64"
 wordsColor = "#2C3333"
@@ -55,7 +60,7 @@ root.configure(
 )
 
 # this will create the widgets
-img = Image.open(r"venv\Assets\Owl_logo.png")
+img = Image.open(r".assets\Owl_logo.png")
 pimg = ImageTk.PhotoImage(img)
 
 header = Label(image=pimg)
@@ -65,7 +70,6 @@ header.configure(
     width=250,
     bg=backgroundcolor,
 )
-
 
 fName = Label(
     root,
@@ -84,7 +88,7 @@ lName = Label(
     bg=backgroundcolor,
     fg=wordsColor,
 
-    )
+)
 
 location = OptionMenu(
     root,
@@ -146,8 +150,8 @@ lNameInput = Entry(
     textvariable=last,
     borderwidth=1,
     width=20,
-    bg = backgroundcolor,
-    fg = textColor,
+    bg=backgroundcolor,
+    fg=textColor,
 )
 
 # this will arrange entry widgets
