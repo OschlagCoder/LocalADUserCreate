@@ -21,3 +21,6 @@ Write-Host "email" $Email
 Write-Host "location" $Location
 
 New-ADUser -Name "$DisplayName" -DisplayName "$DisplayName" -SamAccountName $SAM -UserPrincipalName $UPN -GivenName "$UserFirstName" -Surname "$UserLastName" -AccountPassword(ConvertTo-SecureString $Password -AsPlainText -Force) -ChangePasswordAtLogon $False -PasswordNeverExpires $True -EmailAddress "$Email" -Path "$OU" -Enabled $true
+
+Add-ADGroupMember -Identity Duo_RDS -Members $SAM
+
