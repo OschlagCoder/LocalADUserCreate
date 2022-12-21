@@ -37,7 +37,7 @@ def submit_clicked(*args):
     emailAddress = accountName + "@larsonco.com"
     password = firstName[0].upper() + lastName[0].upper() + "welcome1!"
     empLocation = theLocation
-    UPN = emailAddress
+    UPN = accountName + "@larsonus.com"
 
     # powershell
 
